@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FlightLink</string>
+    <string name="share_label">Convert flight link</string>
+
+    <string name="hero_title">FlightLink</string>
+    <string name="hero_subtitle">FR24 ↔ Skycards link converter</string>
+    <string name="section_link">LINK</string>
+
+    <string name="input_hint">Paste a Flightradar24 or Skycards link</string>
+    <string name="action_paste">Paste</string>
+    <string name="action_convert">Convert</string>
+    <string name="action_open">Open in %1$s</string>
+    <string name="action_open_short">Open</string>
+    <string name="action_copy">Copy</string>
+    <string name="action_aircraft">Open aircraft page</string>
+
+    <string name="direction_format">%1$s → %2$s</string>
+    <string name="fr24">Flightradar24</string>
+    <string name="skycards">Skycards</string>
+
+    <string name="format_hint">Flightradar24 ids are hexadecimal; Skycards ids are decimal. FlightLink converts between them.</string>
+    <string name="share_hint">Tip: in Flightradar24 or Skycards, tap Share and choose FlightLink. The link is converted and the other app opens automatically.</string>
+
+    <string name="status_opened_app">Opening %1$s…</string>
+    <string name="status_opened_browser">Opening the link in your browser.</string>
+    <string name="status_store">%1$s isn\'t installed — opening the app store.</string>
+    <string name="status_failed">Couldn\'t open the app. The link is copied to the clipboard.</string>
+
+    <string name="toast_opening">Opening %1$s…</string>
+    <string name="toast_browser">Opening the link in your browser…</string>
+    <string name="toast_store">%1$s isn\'t installed — opening the app store.</string>
+    <string name="toast_failed_copied">Couldn\'t open the app. The link is copied to the clipboard.</string>
+    <string name="toast_copied">Link copied.</string>
+
+    <string name="error_empty">Paste a link to convert.</string>
+    <string name="error_no_link">No Flightradar24 or Skycards link found.</string>
+    <string name="error_clipboard">The clipboard is empty.</string>
+
+    <string name="footer">Unofficial utility. Not affiliated with Flightradar24 AB.</string>
+    <string name="footer_privacy">No network access · No tracking</string>
+</resources>

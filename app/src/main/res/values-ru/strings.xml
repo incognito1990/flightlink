@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FlightLink</string>
+    <string name="share_label">Конвертировать ссылку</string>
+
+    <string name="hero_title">FlightLink</string>
+    <string name="hero_subtitle">Конвертер ссылок FR24 ↔ Skycards</string>
+    <string name="section_link">ССЫЛКА</string>
+
+    <string name="input_hint">Вставьте ссылку Flightradar24 или Skycards</string>
+    <string name="action_paste">Вставить</string>
+    <string name="action_convert">Конвертировать</string>
+    <string name="action_open">Открыть в %1$s</string>
+    <string name="action_open_short">Открыть</string>
+    <string name="action_copy">Копировать</string>
+    <string name="action_aircraft">Открыть страницу самолёта</string>
+
+    <string name="direction_format">%1$s → %2$s</string>
+    <string name="fr24">Flightradar24</string>
+    <string name="skycards">Skycards</string>
+
+    <string name="format_hint">В Flightradar24 id записан в шестнадцатеричном виде, в Skycards — в десятичном. FlightLink переводит между ними.</string>
+    <string name="share_hint">Совет: в Flightradar24 или Skycards нажмите «Поделиться» и выберите FlightLink — ссылка преобразуется, а другое приложение откроется автоматически.</string>
+
+    <string name="status_opened_app">Открываю %1$s…</string>
+    <string name="status_opened_browser">Открываю ссылку в браузере.</string>
+    <string name="status_store">%1$s не установлено — открываю магазин приложений.</string>
+    <string name="status_failed">Не удалось открыть приложение. Ссылка скопирована в буфер обмена.</string>
+
+    <string name="toast_opening">Открываю %1$s…</string>
+    <string name="toast_browser">Открываю ссылку в браузере…</string>
+    <string name="toast_store">%1$s не установлено — открываю магазин приложений.</string>
+    <string name="toast_failed_copied">Не удалось открыть приложение. Ссылка скопирована в буфер обмена.</string>
+    <string name="toast_copied">Ссылка скопирована.</string>
+
+    <string name="error_empty">Вставьте ссылку для конвертации.</string>
+    <string name="error_no_link">Ссылка Flightradar24 или Skycards не найдена.</string>
+    <string name="error_clipboard">Буфер обмена пуст.</string>
+
+    <string name="footer">Неофициальная утилита. Не связана с Flightradar24 AB.</string>
+    <string name="footer_privacy">Без доступа к сети · Без трекинга</string>
+</resources>
