@@ -63,6 +63,41 @@ class LinkConverterTest {
     }
 
     @Test
+    fun copyTextUsesOnlyTheConvertedLinkByDefault() {
+        val conversion = LinkConverter.convertText("https://fr24.com/SDM6325/42693275")
+
+        assertNotNull(conversion)
+        assertEquals(
+            "https://skycards.app/flight/-/1114190453",
+            conversion!!.clipboardText(false)
+        )
+    }
+
+    @Test
+    fun copyTextCanIncludeBothLinksFromFr24() {
+        val conversion = LinkConverter.convertText("https://fr24.com/SDM6325/42693275")
+
+        assertNotNull(conversion)
+        assertEquals(
+            "Skycards: https://skycards.app/flight/-/1114190453\n" +
+                "Flightradar24: https://fr24.com/42693275",
+            conversion!!.clipboardText(true)
+        )
+    }
+
+    @Test
+    fun copyTextCanIncludeBothLinksFromSkycards() {
+        val conversion = LinkConverter.convertText("https://skycards.app/flight/SU95/1114190453")
+
+        assertNotNull(conversion)
+        assertEquals(
+            "Skycards: https://skycards.app/flight/-/1114190453\n" +
+                "Flightradar24: https://fr24.com/42693275",
+            conversion!!.clipboardText(true)
+        )
+    }
+
+    @Test
     fun linkWithoutNumericIdIsRejected() {
         assertNull(LinkConverter.convertText("https://fr24.com/SDM6325"))
     }

@@ -48,6 +48,27 @@ Store page. The converted link can always be copied to the clipboard.
 For links shared from Skycards that include `?reg=…`, the manual screen also
 offers **Open aircraft page** — an additional Flightradar24 fallback.
 
+## Settings
+
+The gear icon on the main screen configures what happens when a link is shared
+into FlightLink. The action is set separately for each direction:
+
+- **When sharing from Flightradar24:** Open Skycards / Copy / Ask.
+- **When sharing from Skycards:** Open Flightradar24 / Copy / Ask.
+
+The default is **Open**. **Ask** shows a small dialog with Open / Copy / Cancel.
+
+**Copy both links** (global option) makes the Copy action put both links on the
+clipboard:
+
+```text
+Skycards: https://skycards.app/flight/-/1114190453
+Flightradar24: https://fr24.com/42693275
+```
+
+When disabled, only the converted link is copied. The manual screen is not
+affected by these settings.
+
 ## Build
 
 ### Docker (recommended)
@@ -97,6 +118,8 @@ app/src/main/java/dev/flightlink/
   MainActivity.kt    paste/convert screen
   ShareActivity.kt   invisible share target
   AppLauncher.kt     opens the target app, browser, or Play Store
+  Settings.kt        per-direction share actions
+  SettingsActivity.kt  settings screen
 
 app/src/test/java/dev/flightlink/
   LinkConverterTest.kt  unit tests for the conversion rules

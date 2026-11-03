@@ -13,7 +13,22 @@
     <string name="action_open">Open in %1$s</string>
     <string name="action_open_short">Open</string>
     <string name="action_copy">Copy</string>
+    <string name="action_cancel">Cancel</string>
     <string name="action_aircraft">Open aircraft page</string>
+
+    <string name="settings">Settings</string>
+    <string name="back">Back</string>
+    <string name="settings_action_section_fr24">WHEN SHARING FROM FLIGHTRADAR24</string>
+    <string name="settings_action_section_skycards">WHEN SHARING FROM SKYCARDS</string>
+    <string name="settings_open_skycards">Open Skycards</string>
+    <string name="settings_open_fr24">Open Flightradar24</string>
+    <string name="settings_ask">Ask</string>
+    <string name="settings_copy_section">COPYING</string>
+    <string name="settings_copy_both">Copy both links</string>
+    <string name="settings_copy_both_desc">When enabled, Copy puts the Skycards and Flightradar24 links on the clipboard together. Otherwise only the converted link is copied.</string>
+    <string name="settings_note">These settings apply to links shared from other apps. The manual screen always has explicit Open and Copy buttons.</string>
+    <string name="ask_title">What should FlightLink do?</string>
+    <string name="toast_copied_both">Both links copied.</string>
 
     <string name="direction_format">%1$s → %2$s</string>
     <string name="fr24">Flightradar24</string>

@@ -12,6 +12,7 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 
@@ -45,6 +46,10 @@ class MainActivity : Activity() {
         copyButton = findViewById(R.id.copy)
         aircraftButton = findViewById(R.id.open_aircraft)
         statusView = findViewById(R.id.status)
+
+        findViewById<ImageButton>(R.id.settings).setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
 
         setConvertEnabled(false)
 

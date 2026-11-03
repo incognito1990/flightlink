@@ -1,6 +1,7 @@
 package dev.flightlink
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
@@ -9,8 +10,8 @@ import android.os.Bundle
 import android.widget.Toast
 
 /**
- * Invisible activity used as a share target. It converts the shared text,
- * opens the other app, and finishes.
+ * Invisible activity used as a share target. Depending on the per-direction
+ * setting it opens the other app, copies the converted link(s), or asks.
  */
 class ShareActivity : Activity() {
 
@@ -26,15 +27,25 @@ class ShareActivity : Activity() {
             return
         }
 
-        val targetName = getString(
-            if (conversion.source == Conversion.Source.FLIGHTRADAR24) {
-                R.string.skycards
-            } else {
-                R.string.fr24
+        when (Settings(this).actionFor(conversion.source)) {
+            ShareAction.OPEN -> {
+                open(conversion)
+                finish()
             }
-        )
 
+            ShareAction.COPY -> {
+                copy(conversion)
+                finish()
+            }
+
+            ShareAction.ASK -> ask(conversion)
+        }
+    }
+
+    private fun open(conversion: Conversion) {
+        val targetName = targetName(conversion)
         val result = AppLauncher.open(this, conversion)
+
         when (result.outcome) {
             AppLauncher.Outcome.OPENED_APP -> {
                 Toast.makeText(
@@ -61,8 +72,47 @@ class ShareActivity : Activity() {
                 Toast.makeText(this, R.string.toast_failed_copied, Toast.LENGTH_LONG).show()
             }
         }
+    }
 
-        finish()
+    private fun copy(conversion: Conversion) {
+        val both = Settings(this).copyBothLinks
+        copyToClipboard(conversion.clipboardText(both))
+        Toast.makeText(
+            this,
+            if (both) R.string.toast_copied_both else R.string.toast_copied,
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
+    private fun ask(conversion: Conversion) {
+        val both = Settings(this).copyBothLinks
+        val targetName = targetName(conversion)
+
+        val dialog = AlertDialog.Builder(this, R.style.Theme_FlightLink_Dialog)
+            .setTitle(R.string.ask_title)
+            .setMessage(conversion.clipboardText(both))
+            .setPositiveButton(getString(R.string.action_open, targetName)) { _, _ ->
+                open(conversion)
+            }
+            .setNeutralButton(R.string.action_copy) { _, _ ->
+                copy(conversion)
+            }
+            .setNegativeButton(R.string.action_cancel, null)
+            .setCancelable(false)
+            .create()
+
+        dialog.setOnDismissListener { finish() }
+        dialog.show()
+    }
+
+    private fun targetName(conversion: Conversion): String {
+        return getString(
+            if (conversion.targetSource == Conversion.Source.FLIGHTRADAR24) {
+                R.string.fr24
+            } else {
+                R.string.skycards
+            }
+        )
     }
 
     private fun sharedText(intent: Intent?): String? {

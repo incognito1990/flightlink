@@ -30,6 +30,26 @@ data class Conversion(
 
     val targetSource: Source
         get() = if (source == Source.FLIGHTRADAR24) Source.SKYCARDS else Source.FLIGHTRADAR24
+
+    val skycardsUrl: String
+        get() {
+            val id = if (source == Source.SKYCARDS) sourceId else targetId
+            return "https://skycards.app/flight/-/$id"
+        }
+
+    val fr24Url: String
+        get() {
+            val id = if (source == Source.FLIGHTRADAR24) sourceId else targetId
+            return "https://fr24.com/$id"
+        }
+
+    fun clipboardText(includeBoth: Boolean): String {
+        return if (includeBoth) {
+            "Skycards: $skycardsUrl\nFlightradar24: $fr24Url"
+        } else {
+            targetUrl
+        }
+    }
 }
 
 object LinkConverter {

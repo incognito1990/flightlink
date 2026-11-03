@@ -11,4 +11,8 @@
         <item name="android:forceDarkAllowed">false</item>
         <item name="android:fontFamily">sans-serif</item>
     </style>
+
+    <style name="Theme.FlightLink.Dialog" parent="android:Theme.Material.Dialog.Alert">
+        <item name="android:colorAccent">@color/primary</item>
+    </style>
 </resources>

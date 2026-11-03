@@ -13,7 +13,22 @@
     <string name="action_open">Открыть в %1$s</string>
     <string name="action_open_short">Открыть</string>
     <string name="action_copy">Копировать</string>
+    <string name="action_cancel">Отмена</string>
     <string name="action_aircraft">Открыть страницу самолёта</string>
+
+    <string name="settings">Настройки</string>
+    <string name="back">Назад</string>
+    <string name="settings_action_section_fr24">ПРИ ОТПРАВКЕ ИЗ FLIGHTRADAR24</string>
+    <string name="settings_action_section_skycards">ПРИ ОТПРАВКЕ ИЗ SKYCARDS</string>
+    <string name="settings_open_skycards">Открыть Skycards</string>
+    <string name="settings_open_fr24">Открыть Flightradar24</string>
+    <string name="settings_ask">Спрашивать</string>
+    <string name="settings_copy_section">КОПИРОВАНИЕ</string>
+    <string name="settings_copy_both">Копировать обе ссылки</string>
+    <string name="settings_copy_both_desc">Если включено, при копировании в буфер обмена попадут обе ссылки — Skycards и Flightradar24. Иначе копируется только преобразованная ссылка.</string>
+    <string name="settings_note">Настройки действуют для ссылок, которыми делятся из других приложений. На ручном экране всегда есть явные кнопки «Открыть» и «Копировать».</string>
+    <string name="ask_title">Что сделать?</string>
+    <string name="toast_copied_both">Обе ссылки скопированы.</string>
 
     <string name="direction_format">%1$s → %2$s</string>
     <string name="fr24">Flightradar24</string>
